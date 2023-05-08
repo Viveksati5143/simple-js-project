@@ -1,0 +1,53 @@
+<html>
+
+<script>
+    function editProfile() {
+        document.querySelector('.container').style.display = 'none'
+        document.querySelector('.container-edit').style.display = 'block'
+        
+        const name = document.querySelector('#name').textContent
+        document.querySelector('input-name').value = name
+        
+        const email = document.querySelector('#email').textContent
+        document.querySelector('#input-email').value = email
+        
+        const interests = document.querySelector('#interests').textContent
+        document.querySelector('#input-interests').value = interests
+    }
+    
+    function saveProfile() {
+        document.querySelector('#name').textContent = document.querySelector('#input-name').value
+        document.querySelector('#email').textContent = document.querySelector('#input-email').value
+        document.querySelector('#interests').textContent = document.querySelector('#input-interests').value
+        
+        document.querySelector('.container').style.display = 'block'
+        document.querySelector('.container-edit').style.display = 'none'
+    }
+</script>
+
+<body>
+    <div class='container'>
+        <h1 id='header'>USer Profile</h1>
+        <img src='profile-picture'>
+        Name: <h3 id='name'>Anna Smith</h3>
+        <hr />
+        Email: <h3 id='email'>anna.smith@example.com</h3>
+        <hr />
+        Interests: <h3 id='interests'>coding</h3>
+        <hr />
+        <button class='button' onclick="editProfile()">Edit Profile</button>
+    </div>
+    <div class=' container-edit'>
+        <h1 id='header'>User Profile</h1>
+        <img src='profile-picture'>
+        Name: <input id='input-name' type='text' />
+        <hr />
+        Email: <input id='input-email' type='email'>
+        <hr />
+        Interests: <input id='input-interests' type='text'>
+        <hr />
+        <button class='button' onclick="saveProfile()">Save Profile</button>
+    </div>
+</body>
+
+</html>
